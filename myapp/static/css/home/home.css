@@ -1,0 +1,48 @@
+/* static/css/style.css */
+
+/* General Page Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Centered Content */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Home Page Heading */
+h1 {
+    color: #007bff;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Navbar Customization */
+.navbar {
+    background-color: #007bff !important;
+}
+
+.navbar a {
+    color: white !important;
+    font-weight: bold;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}

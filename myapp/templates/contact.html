@@ -1,8 +1,77 @@
 {% extends "base.html" %}
+{% load static %}  {# Load static files #}
+{% load custom_filters %}  {# Load custom filter for multiplication #}
 
-{% block title %}Contact - {{name}} {% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/contact/contact.css' %}">  
+{% endblock %}
+
+{% block title %}Contact - {{ class_id }}{% endblock %}
 
 {% block content %}
     <h1>Contact Us</h1>
-    <h2>Name: {{ name }}</h2>
+    <h2>Name: {{ class_id }}</h2>
+
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Length</th>
+                <th>Width</th>
+                <th>Area</th>  {# Corrected Area Calculation #}
+            </tr>
+        </thead>
+        <tbody>
+            {% for class_area in class_areas %}
+            <tr>
+                <td>{{ class_area.id }}</td>
+                <td>{{ class_area.length }}</td>
+                <td>{{ class_area.width }}</td>
+                <td>{{ class_area.length|multiply:class_area.width }}</td>  {# Uses the custom filter #}
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4" class="text-center">No class areas found</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <br/>
+
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>ClassRoom Name</th>
+                <th>Subject</th>
+                <th>Year</th> 
+            </tr>
+        </thead>
+        <tbody>
+            {% for class_room in class_rooms %}
+            <tr>
+                <td>{{ class_room.name }}</td>
+                <td>{{ class_room.subject }}</td>
+                <td>{{ class_room.year }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="3" class="text-center">No class rooms found</td>  {# colspan should be 3 #}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+
+    {% if description %}
+        {% if description|length > 50 %}
+            {{ description|slice:":50" }}...
+        {% else %}
+            {{ description }}
+        {% endif %}
+    {% else %}
+        <p>No description available.</p>
+    {% endif %}
+
+    <script src="{% static 'js/test.js' %}"></script>
 {% endblock %}
