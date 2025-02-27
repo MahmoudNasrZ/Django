@@ -43,4 +43,4 @@ If you’d like to contribute:
 - Make your changes and commit (`git commit -m "Add new feature"`).
 - Push to your branch (`git push origin feature-branch`).
 - Submit a pull request.
-- Mahmoud Nasr
+Mahmoud Nasr
