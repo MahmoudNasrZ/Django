@@ -8,6 +8,8 @@
     <form method="GET">
         <input type="text" name="name" value="{{ search_name }}" placeholder="Search by Name">
         <input type="text" name="year" value="{{ search_year }}" placeholder="Search by Year">
+        <input type="text" name="subject" value="{{ search_subject }}" placeholder="Search by subject">
+
         <button type="submit">Search</button>
     </form>
 
@@ -18,6 +20,7 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
+                <th>Subject</th>
                 <th>Year</th>
             </tr>
         </thead>
@@ -26,6 +29,7 @@
                 <tr>
                     <td>{{ class_room.id }}</td>
                     <td>{{ class_room.name }}</td>
+                    <td>{{ class_room.subject }}</td>
                     <td>{{ class_room.year }}</td>
                 </tr>
             {% empty %}

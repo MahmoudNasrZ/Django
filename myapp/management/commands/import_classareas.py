@@ -1,7 +1,8 @@
 import json
 from django.core.management.base import BaseCommand # Django's baseclass for creating custom management commands
 from myapp.models import ClassArea  # Import the model To Work With 
-
+# https://forum.djangoproject.com/t/migrating-data-json-to-djangos-orm/13053 , https://www.geeksforgeeks.org/how-to-import-a-json-file-to-a-django-model/
+#AI Gave Up Remember TO ask for explanation 
 class Command(BaseCommand): # Import The mangement Base Command From Cors
     help = 'Import ClassArea data from a JSON file' #  short description of the command when using python manage.py help
 
